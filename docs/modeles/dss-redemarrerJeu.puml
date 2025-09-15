@@ -1,1 +1,9 @@
-// Vous devez compléter ce fichier
+@startuml
+
+actor ":Joueur"
+participant ":Système"
+
+":Joueur" -> ":Système": redémarrerJeu()
+hide footbox
+
+@enduml
