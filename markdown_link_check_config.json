@@ -1,24 +1,18 @@
 {
-    "httpHeaders": [
-        {
-            "urls": [
-                "https://docs.github.com/"
-            ],
-            "headers": {
-                "Accept-Encoding": "zstd, br, gzip, deflate"
-            }
-        }
-    ],
-
-    "ignorePatterns": [
-        {
-            "pattern": "^http://localhost",
-            "comment": "Ignore local links"
-        },
-        {
-            "pattern": "^https?://www.plantuml.com/.*$",
-            "comment": "Ignore PlantUML diagrams (timeout can be long)"
-        }
-    ],
-    "aliveStatusCodes": [200, 206, 403, 429, 999]
+  "httpHeaders": [
+    {
+      "urls": ["https://docs.github.com/*"],
+      "headers": { "Accept-Encoding": "zstd, br, gzip, deflate" }
+    },
+    {
+      "urls": ["https://code.visualstudio.com/*"],
+      "headers": { "User-Agent": "Mozilla/5.0" }
+    }
+  ],
+  "ignorePatterns": [
+    { "pattern": "^http://localhost" },
+    { "pattern": "^https?://www\\.plantuml\\.com/.*$" },
+    { "pattern": "^https://code\\.visualstudio\\.com/?$" }
+  ],
+  "aliveStatusCodes": [200, 206, 403, 429, 999]
 }
