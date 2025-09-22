@@ -22,6 +22,11 @@ describe('GET /api/v1/jeu/redemarrerJeu', () => {
     expect((await response).headers['content-type']).toMatch(/json/);
   });
 
+  it("Jouer donne 404", async () => {
+    const response = await request(app).get('/api/v1/jeu/jouer/');
+    expect(response.status).toBe(404);
+  });
+
   it("Aucun joueur restant", async () => {
     await request(app).get('/api/v1/jeu/redemarrerJeu');
     const joueurs = JSON.parse(jeuRoutes.controleurJeu.joueurs);
